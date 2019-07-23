@@ -4,9 +4,11 @@ import DrumPad from './DrumPad';
 class DrumMachine extends React.Component {
   render() {
     return (
-      <div className="DrumMachine" id="drum-pad">
+      <div className="drum-machine">
         <h1>Drum Machine</h1>
-        <div id="display">Display</div>
+        <div className="display" id="display">
+          Display
+        </div>
         <DrumPad />
       </div>
     );
