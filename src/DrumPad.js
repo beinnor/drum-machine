@@ -1,6 +1,10 @@
 import React from 'react';
 
 class DrumPad extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleKeypress = this.handleKeypress.bind(this);
+  }
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeypress);
   }
@@ -9,18 +13,24 @@ class DrumPad extends React.Component {
   }
 
   handleKeypress(e) {
-    console.log('pressed a key');
-    alert(`Pressed key ${e.keyCode}`);
+    if (e.keyCode === this.props.data.keyCode) {
+      this.playSound();
+    }
   }
 
   playSound = () => {
-    alert('playing sound');
+    console.log(`Playing sound: ${this.props.data.url}`);
+    document.getElementById('clip').play();
   };
 
   render() {
     return (
       <div className="drum-pad" id="a" onClick={this.playSound}>
-        <h1>DrumPad</h1>
+        <h1>{this.props.data.keyTrigger}</h1>
+        <p>{this.props.data.id}</p>
+        <audio className="clip" id="clip" preload="auto" ref={this.playSound}>
+          <source src={this.props.data.url} type="audio/mpeg" />
+        </audio>
       </div>
     );
   }
