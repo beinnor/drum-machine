@@ -21,7 +21,8 @@ class DrumPad extends React.Component {
   playSound = () => {
     console.log(`Playing sound: ${this.props.data.url}`);
     this.props.updateDisplay(this.props.data.id);
-    document.getElementById(this.props.data.keyTrigger).play();
+    this.audio.play();
+    this.audio.currentTime = 0;
   };
 
   render() {
