@@ -36,7 +36,7 @@ class DrumPad extends React.Component {
           className="clip"
           id={this.props.data.keyTrigger}
           preload="auto"
-          ref={this.playSound}
+          ref={ref => (this.audio = ref)}
           src={this.props.data.url}
           type="audio/mpeg"
         />
