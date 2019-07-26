@@ -59,19 +59,31 @@ const bankOne = [
 ];
 
 class DrumMachine extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: ''
+    };
+  }
+
+  updateDisplay = text => {
+    this.setState({ display: text });
+  };
+
   render() {
     const padBank = bankOne.map(bank => {
-      return <DrumPad data={bank} />;
+      return (
+        <DrumPad key={bank.id} data={bank} updateDisplay={this.updateDisplay} />
+      );
     });
 
     return (
-      <div className="drum-machine">
+      <div className="drum-machine" id="drum-machine">
         <h1>Drum Machine</h1>
         <div className="display" id="display">
-          Display
+          {this.state.display}
         </div>
-        {/*<DrumPad data={bankOne[0]} />*/}
-        {padBank}
+        <div className="drum-pads">{padBank}</div>
       </div>
     );
   }

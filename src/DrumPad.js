@@ -20,17 +20,26 @@ class DrumPad extends React.Component {
 
   playSound = () => {
     console.log(`Playing sound: ${this.props.data.url}`);
-    document.getElementById('clip').play();
+    this.props.updateDisplay(this.props.data.id);
+    document.getElementById(this.props.data.keyTrigger).play();
   };
 
   render() {
     return (
-      <div className="drum-pad" id="a" onClick={this.playSound}>
+      <div
+        className="drum-pad"
+        id={this.props.data.id}
+        onClick={this.playSound}
+      >
         <h1>{this.props.data.keyTrigger}</h1>
-        <p>{this.props.data.id}</p>
-        <audio className="clip" id="clip" preload="auto" ref={this.playSound}>
-          <source src={this.props.data.url} type="audio/mpeg" />
-        </audio>
+        <audio
+          className="clip"
+          id={this.props.data.keyTrigger}
+          preload="auto"
+          ref={this.playSound}
+          src={this.props.data.url}
+          type="audio/mpeg"
+        />
       </div>
     );
   }
