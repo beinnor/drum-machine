@@ -6,3 +6,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.drum-machine {
+  border: 1px solid black;
+}
+
+.display {
+  border: 1px solid red;
+}
+
+.drum-pads {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.drum-pad {
+  border: 1px solid grey;
+  background-color: aliceblue;
+  text-align: center;
+}
