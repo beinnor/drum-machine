@@ -1,13 +1,14 @@
 import React from 'react';
 import DrumPad from './DrumPad';
-import { bankTwo as drumBank } from './utils/drumBanks';
+import Controls from './Controls';
+import { bankOne, bankTwo } from './utils/drumBanks';
 
 class DrumMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       display: '',
-      currentBank: drumBank
+      currentBank: bankOne
     };
   }
 
@@ -15,8 +16,16 @@ class DrumMachine extends React.Component {
     this.setState({ display: text });
   };
 
+  selectDrumBank = bank => {
+    if (this.state.currentBank === bankOne) {
+      this.setState({ currentBank: bankTwo });
+    } else {
+      this.setState({ currentBank: bankOne });
+    }
+  };
+
   render() {
-    const padBank = this.state.currentBank.map(bank => {
+    const pads = this.state.currentBank.map(bank => {
       return (
         <DrumPad key={bank.id} data={bank} updateDisplay={this.updateDisplay} />
       );
@@ -28,7 +37,11 @@ class DrumMachine extends React.Component {
         <div className="display" id="display">
           {this.state.display}
         </div>
-        <div className="drum-pads">{padBank}</div>
+        <div className="drum-pads">{pads}</div>
+        <Controls
+          currentBank={this.state.currentBank}
+          changeBank={this.selectDrumBank}
+        />
       </div>
     );
   }
