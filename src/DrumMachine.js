@@ -1,7 +1,9 @@
 import React from 'react';
 import DrumPad from './DrumPad';
 import Controls from './Controls';
+import Display from './Display';
 import { bankOne, bankTwo } from './utils/drumBanks';
+import './DrumMachine.css';
 
 class DrumMachine extends React.Component {
   constructor(props) {
@@ -33,10 +35,7 @@ class DrumMachine extends React.Component {
 
     return (
       <div className="drum-machine" id="drum-machine">
-        <h1>Drum Machine</h1>
-        <div className="display" id="display">
-          {this.state.display}
-        </div>
+        <Display text={this.state.display} />
         <div className="drum-pads">{pads}</div>
         <Controls
           currentBank={this.state.currentBank}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { bankOne, bankTwo } from './utils/drumBanks';
+import './Controls.css';
 
 export default function Controls(props) {
   return (
