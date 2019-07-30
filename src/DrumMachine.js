@@ -10,7 +10,8 @@ class DrumMachine extends React.Component {
     super(props);
     this.state = {
       display: '',
-      currentBank: bankOne
+      currentBank: bankOne,
+      availableBanks: [bankOne, bankTwo]
     };
   }
 
@@ -18,11 +19,16 @@ class DrumMachine extends React.Component {
     this.setState({ display: text });
   };
 
-  selectDrumBank = bank => {
-    if (this.state.currentBank === bankOne) {
-      this.setState({ currentBank: bankTwo });
-    } else {
-      this.setState({ currentBank: bankOne });
+  selectDrumBank = bankNum => {
+    switch (bankNum) {
+      case 1:
+        this.setState({ currentBank: bankOne });
+        break;
+      case 2:
+        this.setState({ currentBank: bankTwo });
+        break;
+      default:
+        break;
     }
   };
 

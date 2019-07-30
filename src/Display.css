@@ -1,6 +1,6 @@
 .display {
-  border: 1px solid red;
-  height: 1vh;
-  padding: 1rem;
+  margin: 0;
+  width: 100%;
   text-align: center;
+  border: none;
 }

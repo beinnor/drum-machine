@@ -3,6 +3,13 @@ import { bankOne, bankTwo } from './utils/drumBanks';
 import './Controls.css';
 
 export default function Controls(props) {
+  const selectBank1 = () => {
+    props.changeBank(1);
+  };
+  const selectBank2 = () => {
+    props.changeBank(2);
+  };
+
   return (
     <div className="controls">
       <div>
@@ -12,9 +19,9 @@ export default function Controls(props) {
           name="drumBankTwoSelect"
           value="Drumbank #1"
           checked={props.currentBank === bankOne}
-          onClick={props.changeBank}
+          onClick={selectBank1}
         />
-        <label for="drumBankOneSelect">Drumbank #1</label>
+        <label htmlFor="drumBankOneSelect">Drumbank #1</label>
 
         <input
           type="radio"
@@ -22,9 +29,9 @@ export default function Controls(props) {
           name="drumBankTwoSelect"
           value="Drumbank #2"
           checked={props.currentBank === bankTwo}
-          onClick={props.changeBank}
+          onClick={selectBank2}
         />
-        <label for="drumBankTwoSelect">Drumbank #2</label>
+        <label htmlFor="drumBankTwoSelect">Drumbank #2</label>
       </div>
     </div>
   );
