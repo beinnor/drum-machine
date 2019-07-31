@@ -4,6 +4,9 @@ import './DrumPad.css';
 class DrumPad extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      padClassName: 'drum-pad'
+    };
     this.handleKeypress = this.handleKeypress.bind(this);
   }
   componentDidMount() {
@@ -15,9 +18,19 @@ class DrumPad extends React.Component {
 
   handleKeypress(e) {
     if (e.keyCode === this.props.data.keyCode) {
+      this.lightUpPad();
+      setTimeout(() => this.lightUpPad(), 100);
       this.playSound();
     }
   }
+
+  lightUpPad = () => {
+    if (this.state.padClassName === 'drum-pad') {
+      this.setState({ padClassName: 'drum-pad active' });
+    } else {
+      this.setState({ padClassName: 'drum-pad' });
+    }
+  };
 
   playSound = () => {
     console.log(`Playing sound: ${this.props.data.url}`);
@@ -29,7 +42,7 @@ class DrumPad extends React.Component {
   render() {
     return (
       <div
-        className="drum-pad"
+        className={this.state.padClassName}
         id={this.props.data.id}
         onClick={this.playSound}
       >

@@ -2,4 +2,8 @@
   border: 1px solid black;
   width: 60%;
   margin: 0 auto;
+  padding: 2rem;
+  box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
+    0px 0px 4px 2px #777;
+  background: rgba(45, 45, 45, 1);
 }

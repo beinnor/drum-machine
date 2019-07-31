@@ -19,7 +19,7 @@ export default function Controls(props) {
           name="drumBankTwoSelect"
           value="Drumbank #1"
           checked={props.currentBank === bankOne}
-          onClick={selectBank1}
+          onChange={selectBank1}
         />
         <label htmlFor="drumBankOneSelect">Drumbank #1</label>
 
@@ -29,7 +29,7 @@ export default function Controls(props) {
           name="drumBankTwoSelect"
           value="Drumbank #2"
           checked={props.currentBank === bankTwo}
-          onClick={selectBank2}
+          onChange={selectBank2}
         />
         <label htmlFor="drumBankTwoSelect">Drumbank #2</label>
       </div>
