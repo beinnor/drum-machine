@@ -2,6 +2,7 @@ import React from 'react';
 import DrumPad from './DrumPad';
 import Controls from './Controls';
 import Display from './Display';
+import Header from './Header';
 import { bankOne, bankTwo } from './utils/drumBanks';
 import './DrumMachine.css';
 
@@ -41,6 +42,7 @@ class DrumMachine extends React.Component {
 
     return (
       <div className="drum-machine" id="drum-machine">
+        <Header />
         <Display text={this.state.display} />
         <div className="drum-pads">{pads}</div>
         <Controls
