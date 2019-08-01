@@ -40,3 +40,9 @@
   text-shadow: 0 0 3px #000000;
   padding: 10px;
 }
+
+.active {
+  background-color: rgb(251, 255, 1);
+  box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
+    0px 0px 4px 2px rgb(251, 255, 1);
+}
