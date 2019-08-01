@@ -3,6 +3,7 @@ import DrumPad from './DrumPad';
 import Controls from './Controls';
 import Display from './Display';
 import Header from './Header';
+import Footer from './Footer';
 import { bankOne, bankTwo } from './utils/drumBanks';
 import './DrumMachine.css';
 
@@ -44,6 +45,7 @@ class DrumMachine extends React.Component {
           currentBank={this.state.currentBank}
           nextBank={this.selectDrumBank}
         />
+        <Footer />
       </div>
     );
   }
