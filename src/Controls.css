@@ -1,4 +1,42 @@
+@font-face {
+  font-family: 'DSEG14 Modern';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DSEG14 Modern'),
+    url('./assets/fonts/DSEG14Modern-Regular.woff') format('woff');
+}
+
+.currentBankDisplay {
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 50%;
+  text-align: center;
+  border: none;
+  color: #111;
+  font-family: 'DSEG14 Modern';
+  font-size: 1rem;
+  background: rgba(82, 90, 53, 1);
+  box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
+    0px 0px 4px 2px #777;
+}
+
 .controls {
   padding: 1rem;
   text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nextBankBtn {
+  border: none;
+  background-color: aliceblue;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
+    0px 0px 4px 2px #777;
+  text-shadow: 0 0 3px #000000;
+  padding: 10px;
 }

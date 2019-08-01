@@ -20,21 +20,16 @@ class DrumMachine extends React.Component {
     this.setState({ display: text });
   };
 
-  selectDrumBank = bankNum => {
-    switch (bankNum) {
-      case 1:
-        this.setState({ currentBank: bankOne });
-        break;
-      case 2:
-        this.setState({ currentBank: bankTwo });
-        break;
-      default:
-        break;
+  selectDrumBank = () => {
+    if (this.state.currentBank === bankOne) {
+      this.setState({ currentBank: bankTwo });
+    } else {
+      this.setState({ currentBank: bankOne });
     }
   };
 
   render() {
-    const pads = this.state.currentBank.map(bank => {
+    const pads = this.state.currentBank[1].map(bank => {
       return (
         <DrumPad key={bank.id} data={bank} updateDisplay={this.updateDisplay} />
       );
@@ -47,7 +42,7 @@ class DrumMachine extends React.Component {
         <div className="drum-pads">{pads}</div>
         <Controls
           currentBank={this.state.currentBank}
-          changeBank={this.selectDrumBank}
+          nextBank={this.selectDrumBank}
         />
       </div>
     );

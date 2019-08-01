@@ -18,8 +18,6 @@ class DrumPad extends React.Component {
 
   handleKeypress(e) {
     if (e.keyCode === this.props.data.keyCode) {
-      this.lightUpPad();
-      setTimeout(() => this.lightUpPad(), 100);
       this.playSound();
     }
   }
@@ -33,7 +31,8 @@ class DrumPad extends React.Component {
   };
 
   playSound = () => {
-    console.log(`Playing sound: ${this.props.data.url}`);
+    this.lightUpPad();
+    setTimeout(() => this.lightUpPad(), 100);
     this.props.updateDisplay(this.props.data.id);
     this.audio.play();
     this.audio.currentTime = 0;
