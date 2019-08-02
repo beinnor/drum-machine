@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
     0px 0px 4px 2px #777;
-  margin-top: 2rem;
+  margin-top: 20px;
   text-shadow: 0 0 3px #000000;
 }
 
@@ -12,13 +12,26 @@
   border: none;
   background-color: aliceblue;
   text-align: center;
-  font-size: 2rem;
+  font-size: 40px;
+  padding: 30px;
   box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
     0px 0px 4px 2px #777;
+  font-weight: bold;
 }
 
 .active {
   background-color: rgb(251, 255, 1);
   box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
     0px 0px 4px 2px rgb(251, 255, 1);
+}
+
+@media only screen and (max-width: 500px) {
+  .drum-pads {
+    margin-top: 25px;
+  }
+
+  .drum-pad {
+    font-size: 50px;
+    padding: 10px 5px 10px 5px;
+  }
 }

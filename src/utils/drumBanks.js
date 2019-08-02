@@ -1,5 +1,5 @@
 export const bankOne = [
-  ['Bank One'],
+  ['Heater Kit'],
   [
     {
       keyCode: 81,
@@ -59,7 +59,7 @@ export const bankOne = [
 ];
 
 export const bankTwo = [
-  ['Bank Two'],
+  ['Piano Kit'],
   [
     {
       keyCode: 81,

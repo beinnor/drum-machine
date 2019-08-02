@@ -45,7 +45,7 @@ class DrumPad extends React.Component {
         id={this.props.data.id}
         onClick={this.playSound}
       >
-        <h1>{this.props.data.keyTrigger}</h1>
+        {this.props.data.keyTrigger}
         <audio
           className="clip"
           id={this.props.data.keyTrigger}

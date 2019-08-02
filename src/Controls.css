@@ -8,25 +8,25 @@
 
 .currentBankDisplay {
   margin: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
   text-align: center;
   border: none;
   color: #111;
   font-family: 'DSEG14 Modern';
-  font-size: 1rem;
+  font-size: 20px;
   background: rgba(82, 90, 53, 1);
   box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
     0px 0px 4px 2px #777;
 }
 
 .controls {
-  padding: 1rem;
+  padding: 20px 0 20px 0;
   text-align: center;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -34,15 +34,28 @@
   border: none;
   background-color: aliceblue;
   text-align: center;
-  font-size: 2rem;
+  font-size: 30px;
   box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
     0px 0px 4px 2px #777;
   text-shadow: 0 0 3px #000000;
-  padding: 10px;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.nextBankBtn::first-letter {
+  font-weight: bold;
 }
 
 .active {
   background-color: rgb(251, 255, 1);
   box-shadow: inset 1px 1px 6px 0px #050505, 0px 0px 4px 2px #000,
     0px 0px 4px 2px rgb(251, 255, 1);
+}
+
+@media only screen and (max-width: 500px) {
+  .controls {
+    padding: 30px 0 30px 0;
+  }
+  .nextBankBtn {
+  }
 }
